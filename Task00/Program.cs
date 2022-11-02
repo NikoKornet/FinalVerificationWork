@@ -7,6 +7,18 @@ string[] specifiedArray = new string[] { "1234", "C#", "76543", "teftel", "cat",
 Console.WriteLine("Заданный массив: ");
 PrintArray(specifiedArray);
 int lengthCharacters = 3;
+int lengthSecondaryArr = DetermineLengthSecondaryArr(specifiedArray, lengthCharacters);
+
+// Найдем длину будущего массива.
+int DetermineLengthSecondaryArr(string[] arr, int lengthChar)
+{
+    int counter = 0;
+    for (int i = 0; i <= arr.Length - 1; i++)
+    {
+        if (arr[i].Length <= lengthChar) counter++;
+    }
+    return counter;
+}
 
 // Метод печати массива.
 void PrintArray(string[] array)
